@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRB Group D Result Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="widget-container">
+    <div class="widget-header">
+        <h2>RRB Group D Result</h2>
+        <p>Check your qualifying status instantly</p>
+    </div>
+
+    <form id="resultForm" class="result-form">
+        <div class="form-group">
+            <label for="zone">Select Zone</label>
+            <select id="zone" name="zone" required>
+                <option value="" disabled selected>Choose your zone</option>
+                <option value="Bhubaneshwar">Bhubaneshwar</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rollNumber">Roll Number</label>
+            <input type="text" id="rollNumber" name="rollNumber" pattern="[0-9]{16}" placeholder="16-digit roll number" required>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-primary">
+            <span class="btn-text">Check Result</span>
+            <div class="loader" id="btnLoader" style="display: none;"></div>
+        </button>
+    </form>
+
+    <div id="resultCard" class="result-card" style="display: none;">
+        <div class="result-icon" id="resultIcon"></div>
+        <h3 id="resultTitle"></h3>
+        <p id="resultMessage"></p>
+        <button id="resetBtn" class="btn-secondary">Check Another</button>
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
